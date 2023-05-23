@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @record %>
+
+<div>
+  <%= link_to "Volver a registros", records_path %>
+
+  <%= button_to "Eliminar registro", @record, method: :delete %>
+</div>

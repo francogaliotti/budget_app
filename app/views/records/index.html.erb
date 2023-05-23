@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Registros</h1>
+<h1 <%= @counter >= 0 ? "style= color:green" : "style= color:red" %> >Total <%= @counter %></h1>
+
+<div id="records">
+  <% @records.each do |record| %>
+    <%= render record %>
+    <p>
+      <%= link_to "Ver Registro", record %>
+    </p>
+  <% end %>
+</div>
+

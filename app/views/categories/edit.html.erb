@@ -1,0 +1,8 @@
+<h1>Editar categoria</h1>
+<%= render "form", category: @category do %>
+  <br>
+  <div>
+    <%= link_to "Mostrar categoria", @category %> |
+    <%= link_to "Volver a categorias", categories_path %>
+  </div>
+<% end %>
