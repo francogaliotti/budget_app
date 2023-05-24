@@ -1,4 +1,4 @@
-<h1>Nuevo Registro</h1>
+<h1>Nuevo <%= @id == "1" ? "Ingreso" : "Egreso" %></h1>
 
 <%= render "form", record: @record, type: @id %>
 

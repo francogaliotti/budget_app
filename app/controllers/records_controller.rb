@@ -38,23 +38,23 @@ class RecordsController < ApplicationController
           format.html { redirect_to record_path(@record), notice: "Registro creada" }
           format.json { render :show, status: :created, location: @record }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render :new_record, status: :unprocessable_entity }
           format.json { render json: @record.errors, status: :unprocessable_entity }
         end
       end
     end
   
-    def update
-      respond_to do |format|
-        if @record.update(record_params)
-            format.html { redirect_to record_url(@record), notice: "Registro creada" }
-            format.json { render :show, status: :created, location: @record }
-        else
-            format.html { render :new, status: :unprocessable_entity }
-            format.json { render json: @record.errors, status: :unprocessable_entity }
-        end
-      end
-    end
+    # def update
+    #   respond_to do |format|
+    #     if @record.update(record_params)
+    #         format.html { redirect_to record_url(@record), notice: "Registro creada" }
+    #         format.json { render :show, status: :created, location: @record }
+    #     else
+    #         format.html { render :new, status: :unprocessable_entity }
+    #         format.json { render json: @record.errors, status: :unprocessable_entity }
+    #     end
+    #   end
+    # end
   
     def destroy
       @record.destroy
