@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_23_174833) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_27_214725) do
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.boolean "is_income"
@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_174833) do
     t.datetime "updated_at", null: false
     t.integer "category_id", null: false
     t.integer "user_id", null: false
+    t.date "date"
     t.index ["category_id"], name: "index_records_on_category_id"
     t.index ["user_id"], name: "index_records_on_user_id"
   end

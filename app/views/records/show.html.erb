@@ -4,6 +4,7 @@
 
 <div>
   <%= link_to "Volver a registros", records_path %>
-
+  <%= link_to "Editar", edit_record_path(@record) %> |
   <%= button_to "Eliminar registro", @record, method: :delete %>
 </div>
+

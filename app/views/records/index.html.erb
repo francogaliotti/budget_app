@@ -4,11 +4,13 @@
 <h1 <%= @counter >= 0 ? "style= color:green" : "style= color:red" %> >Total <%= @counter %></h1>
 
 <div id="records">
-  <% @records.each do |record| %>
-    <%= render record %>
-    <p>
-      <%= link_to "Ver Registro", record %>
-    </p>
+  <% @records.reverse_each do |record| %>
+    <div class="list-group">
+      <%= render record %>
+      <p>
+        <%= link_to "Ver Registro", record %>
+      </p>
+    </div>
   <% end %>
 </div>
 

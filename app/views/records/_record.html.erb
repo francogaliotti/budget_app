@@ -1,19 +1,23 @@
-<div id="<%= dom_id record %>">
-  <p>
+<div id="<%= dom_id(record) %>" class="list-group-item">
+  <p class="mb-1">
     <strong>Titulo:</strong>
     <%= record.title %>
   </p>
-  <p>
+  <p class="mb-1">
     <strong>Monto:</strong>
     <%= record.amount %>
   </p>
-  <p>
+  <p class="mb-1">
     <strong>Tipo:</strong>
     <% if record.category.is_income %>
-      <%= "Ingreso" %>
+      <%= content_tag(:span, "Ingreso", class: "text-success") %>
     <% else %>
-      <%= "Egreso" %>
+      <%= content_tag(:span, "Egreso", class: "text-danger") %>
     <% end %>
+   <%= content_tag(:span, "(#{record.category.title})") %>
   </p>
-
+  <p class="mb-1">
+    <strong>Fecha:</strong>
+    <%= record.date.present? ? record.date.strftime("%d/%m/%Y") : "No indicada" %>
+  </p>
 </div>

@@ -1,0 +1,8 @@
+<h1>Editar registro</h1>
+<%= render "form", record: @record, type: @record.category.is_income do %>
+  <br>
+  <div>
+    <%= link_to "Mostrar Registro", @record %> |
+    <%= link_to "Volver a Registros", records_path %>
+  </div>
+<% end %>
