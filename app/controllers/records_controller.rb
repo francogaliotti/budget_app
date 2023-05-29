@@ -3,16 +3,7 @@ class RecordsController < ApplicationController
   before_action :set_record, only: %i[show edit update destroy]
 
   def index
-    @records = Record.where(user_id: current_user.id)
-    total_amount = 0
-    @records.each do |record|
-      if record.category.is_income
-        total_amount += record.amount
-      else
-        total_amount -= record.amount
-      end
-    end
-    @counter = total_amount
+    @records = Record.where(user: current_user)
   end
 
   def show; end

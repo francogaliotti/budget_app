@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Registros</h1>
-<h1 <%= @counter >= 0 ? "style= color:green" : "style= color:red" %> >Total <%= @counter %></h1>
+<h1 <%= current_user.get_total_amount >= 0 ? "style= color:green" : "style= color:red" %> >Total <%= current_user.get_total_amount %></h1>
 
 <div id="records">
   <% @records.reverse_each do |record| %>
